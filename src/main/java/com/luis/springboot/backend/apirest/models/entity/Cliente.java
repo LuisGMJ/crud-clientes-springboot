@@ -1,7 +1,6 @@
 package com.luis.springboot.backend.apirest.models.entity;
 
 import java.io.Serializable;
-import java.text.ParseException;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,9 +18,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.Nationalized;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -46,7 +41,7 @@ public class Cliente implements Serializable {
 	
 	@NotEmpty(message = "No puede estar vacio")
 	@Email(message = "Formato incorrecto")
-	@Column(nullable = false, unique = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	@NotNull(message = "No puede estar vacio")

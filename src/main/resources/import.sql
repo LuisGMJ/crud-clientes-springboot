@@ -17,3 +17,15 @@ INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (7, 
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (1, 'Luis8', 'Matehuala8', 'lg.mj@gmail.com8', '2020-02-08');
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (2, 'Luis9', 'Matehuala9', 'lg.mj@gmail.com9', '2020-02-09');
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (3, 'Luis0', 'Matehuala0', 'lg.mj@gmail.com0', '2020-02-10');
+
+/* Creacion de usuarios con sus roles */
+
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('luis', '$2a$10$fIwZ3T7BGScC66F4CW6J9.ujo7lFHeDXppaZs9T5ejSHKgZaIrVTK', 1, 'Luis1', 'Matehuala1', 'lg.mj@gmail.com1');
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('admin', '$2a$10$aApFrvETQ1XTwhu.5JQWrugZUBoT.LYzoBkGVHalAnkIC8jWJ4WVy', 1, 'Luis2', 'Matehuala2', 'lg.mj@gmail.com2');
+
+INSERT INTO roles (nombre) VALUES ('ROLE_USER');
+INSERT INTO roles (nombre) VALUES ('ROLE_ADMIN');
+
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (1, 1);
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (2, 2);
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (2, 1);
